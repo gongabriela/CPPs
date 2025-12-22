@@ -6,7 +6,7 @@
 /*   By: ggoncalv <ggoncalv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:08:15 by ggoncalv          #+#    #+#             */
-/*   Updated: 2025/12/22 11:45:41 by ggoncalv         ###   ########.fr       */
+/*   Updated: 2025/12/22 14:51:43 by ggoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,21 @@
 # include "Contact.hpp"
 # include <iostream> 
 # include <string> 
-    
+# include <iomanip>
+# include <sstream>
+
 class PhoneBook {
     public:
-        PhoneBook();
-        void    AddContacts();
+        PhoneBook(int valorInicial);
+        void        AddContacts();
+        std::string getInfo(std::string info);
+        void        printContact(int index);
+        void        printPhonebook();
+        std::string formatField(std::string str);
     private:
         Contact contacts[8];
         int     index;
+        int     totalContacts;
 };
 
 #endif
