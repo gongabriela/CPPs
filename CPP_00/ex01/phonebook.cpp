@@ -6,16 +6,17 @@
 /*   By: ggoncalv <ggoncalv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 11:38:32 by ggoncalv          #+#    #+#             */
-/*   Updated: 2025/12/22 15:06:29 by ggoncalv         ###   ########.fr       */
+/*   Updated: 2025/12/23 14:00:54 by ggoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 //constructor
-PhoneBook::PhoneBook(int valorInicial) {
+PhoneBook::PhoneBook() {
     std::cout << "Welcome to the phonebook!" <<std::endl;
-    this->index = this->totalContacts = valorInicial;
+    this->index = 0;
+    this->totalContacts = 0;
 }
 
 //adiciona o contacto apos ter tudo preenchido
@@ -33,7 +34,7 @@ void    PhoneBook::AddContacts() {
 }
 
 //pega cada informacao do contacto
-std::string PhoneBook::getInfo(std::string info) {
+std::string PhoneBook::getInfo(const std::string& info) {
     std::string input;
     
     do {
@@ -45,7 +46,7 @@ std::string PhoneBook::getInfo(std::string info) {
 }
 
 //printar o Phonebook
-void    PhoneBook::printPhonebook() {
+void    PhoneBook::printPhonebook() const {
     if (this->totalContacts == 0) {
         std::cout << "Phonebook is empty!" << std::endl;
         return;
@@ -57,9 +58,9 @@ void    PhoneBook::printPhonebook() {
     
     for (int i = 0; i < this->totalContacts; i++) {
         std::cout << "|" << std::setw(10) << i << "|"
-                  << std::setw(10) << formatField(this->contacts[i].firstName) << "|"
-                  << std::setw(10) << formatField(this->contacts[i].lastName) << "|"
-                  << std::setw(10) << formatField(this->contacts[i].nickname) << "|"
+                  << std::setw(10) << formatField(this->contacts[i].getFirstName()) << "|"
+                  << std::setw(10) << formatField(this->contacts[i].getLastName()) << "|"
+                  << std::setw(10) << formatField(this->contacts[i].getNickname()) << "|"
                   << std::endl;
     }
 
@@ -81,18 +82,17 @@ void    PhoneBook::printPhonebook() {
 }
 
 //printar UM contacto
-void    PhoneBook::printContact(int index) {
+void    PhoneBook::printContact(int index) const {
     
     std::cout << std::endl << "======== CONTACT INFO ========" << std::endl;
-    std::cout << "First name: " << this->contacts[index].firstName << std::endl;
-    std::cout << "Last name: " << this->contacts[index].lastName << std::endl;
-    std::cout << "Nickname: " << this->contacts[index].nickname << std::endl;
-    std::cout << "Phone number: " << this->contacts[index].phoneNumber << std::endl;
-    std::cout << "Darkest secret: " << this->contacts[index].darkestSecret << std::endl;
-    std::cout << "Contact added successfully at index " << this->index << "!" << std::endl;
+    std::cout << "First name: " << this->contacts[index].getFirstName() << std::endl;
+    std::cout << "Last name: " << this->contacts[index].getLastName() << std::endl;
+    std::cout << "Nickname: " << this->contacts[index].getNickname() << std::endl;
+    std::cout << "Phone number: " << this->contacts[index].getPhoneNumber() << std::endl;
+    std::cout << "Darkest secret: " << this->contacts[index].getDarkestSecret() << std::endl;
 }
 
-std::string PhoneBook::formatField(std::string str) {
+std::string PhoneBook::formatField(const std::string& str) const {
     if (str.length() > 10)
         return str.substr(0, 9) + ".";
     return str;

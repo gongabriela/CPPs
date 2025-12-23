@@ -6,7 +6,7 @@
 /*   By: ggoncalv <ggoncalv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:08:00 by ggoncalv          #+#    #+#             */
-/*   Updated: 2025/12/22 15:41:16 by ggoncalv         ###   ########.fr       */
+/*   Updated: 2025/12/23 14:22:23 by ggoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,24 @@
 # include <string>
 
 class Contact {
-    public:
+    public:        
+        //criar um construtor padrao para a array
+        Contact () {};
+        //construtor com parametros (e funciona como setter)
+        Contact(const std::string& first, const std::string& last, const std::string& nick, 
+                const std::string& phone, const std::string& darkest);        
+        //getters
+        std::string getFirstName() const;
+        std::string getLastName() const;
+        std::string getNickname() const;
+        std::string getPhoneNumber() const;
+        std::string getDarkestSecret() const;
+    private:
         std::string firstName;
         std::string lastName;
         std::string nickname;
         std::string phoneNumber;
         std::string darkestSecret;
-        
-        //criar um construtor padrao para a array
-        Contact () {};
-        //construtor com parametros
-        Contact(std::string first, std::string last, std::string nick, std::string phone,
-            std::string darkest);
 };
 
 #endif
