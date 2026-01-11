@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggoncalv <ggoncalv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 11:38:32 by ggoncalv          #+#    #+#             */
-/*   Updated: 2025/12/23 14:00:54 by ggoncalv         ###   ########.fr       */
+/*   Updated: 2026/01/11 13:16:02 by ggoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ PhoneBook::PhoneBook() {
     this->totalContacts = 0;
 }
 
-//adiciona o contacto apos ter tudo preenchido
+// adds the contact after all fields are filled in
 void    PhoneBook::AddContacts() {
     std::cout << "Please fill out all contact information" << std::endl;
     std::string firstName = getInfo("first name");
@@ -27,25 +27,40 @@ void    PhoneBook::AddContacts() {
     std::string nickname = getInfo("nickname");
     std::string phoneNumber = getInfo("phone number");
     std::string darkestSecret = getInfo("darkest secret");
-    this->contacts[this->index] = Contact(firstName, lastName, nickname, phoneNumber, darkestSecret);
-    this->index = (this->index + 1) % 8;
+    this->contacts[this->index] = Contact(firstName, lastName, nickname, phoneNumber, darkestSecret); //instanciated contact obj
+    this->index = (this->index + 1) % 8; //circular buffer
     if (this->totalContacts < 8)
         this->totalContacts++;
 }
 
-//pega cada informacao do contacto
+// fetches each contact's information
 std::string PhoneBook::getInfo(const std::string& info) {
     std::string input;
     
     do {
-        std::cout << info << ": ";
+        std::cout << info << ": " << std::endl;
         getline(std::cin, input);
-    } while (input.empty()); //verificar que a pessoa de fato deu um input
+    } while (!verifyInput(info, input)); // verify that the user actually provided input // maybe place a full validation function here?
 
     return input;   
 }
 
-//printar o Phonebook
+// verify user input
+bool    PhoneBook::verifyInput(const std::string &info, const std::string &input) {
+    if (input.empty()) {
+        std::cout << "Field cannot be empty!" << std::endl;
+        return false;
+    }
+    if (info == "phone number") {
+        if (input.find_first_not_of("0123456789") != std::string::npos) {
+            std::cout << "the field phone number only accepts numbers as inputs!" << std::endl;
+            return false;
+        }
+    }
+    return true;
+}
+
+// print the PhoneBook
 void    PhoneBook::printPhonebook() const {
     if (this->totalContacts == 0) {
         std::cout << "Phonebook is empty!" << std::endl;
@@ -64,16 +79,16 @@ void    PhoneBook::printPhonebook() const {
                   << std::endl;
     }
 
-    int chosenIndex;
+    int chosenIndex = -1;
     while (true) {
         std::string input;
-        std::cout << "Type an index to view further details or ENTER to leave this page: ";
+        std::cout << "Type an index to view further details or ENTER to leave this page: " << std::endl;
         getline(std::cin, input);
         if (input.empty())
             break ;
-        std::stringstream ss(input);
-        if ((ss >> chosenIndex && ss.eof()) && 
-            (chosenIndex >= 0 && chosenIndex < this->totalContacts)) {
+        if (input.size() == 1 && isdigit(input[0]))
+            chosenIndex = input[0] - '0';
+        if (chosenIndex >= 0 && chosenIndex < this->totalContacts) {
                 this->printContact(chosenIndex);
                 break ;
             }
@@ -81,10 +96,10 @@ void    PhoneBook::printPhonebook() const {
     }
 }
 
-//printar UM contacto
+// print a SINGLE contact
 void    PhoneBook::printContact(int index) const {
     
-    std::cout << std::endl << "======== CONTACT INFO ========" << std::endl;
+    std::cout << std::endl << "=============== CONTACT INFO ===============" << std::endl;
     std::cout << "First name: " << this->contacts[index].getFirstName() << std::endl;
     std::cout << "Last name: " << this->contacts[index].getLastName() << std::endl;
     std::cout << "Nickname: " << this->contacts[index].getNickname() << std::endl;

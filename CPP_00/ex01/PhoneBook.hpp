@@ -6,7 +6,7 @@
 /*   By: ggoncalv <ggoncalv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:08:15 by ggoncalv          #+#    #+#             */
-/*   Updated: 2025/12/23 14:00:41 by ggoncalv         ###   ########.fr       */
+/*   Updated: 2026/01/11 12:50:16 by ggoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,26 @@
 
 class PhoneBook {
     public:
-        PhoneBook(); //construtor
-        void        AddContacts(); //recolhe as informacoes e depois adiciona um contacto ao phonebook
-        void        printPhonebook() const; //printa o preview de todos os contactos salvos
+        PhoneBook(); // constructor
+        void        AddContacts(); // collects info and then adds a contact to the phone book
+        void        printPhonebook() const; // prints a preview table of all saved contacts
     private:
         Contact contacts[8];
         int     index;
         int     totalContacts;
-        //funcoes auxiliares
-        std::string getInfo(const std::string& info); //recolhe uma informacao (usa-se em AddContacts)
-        void        printContact(int index) const; //printa um contacto especifico (usa-se em printPhoneBook)
-        std::string formatField(const std::string& str) const; //formata a informacao antes de printar (usa-se em printPhoneBook)
+        // helper functions
+        std::string getInfo(const std::string& info); // collects a single field (used in AddContacts)
+        bool        verifyInput(const std::string &info, const std::string &input); // validates user input
+        void        printContact(int index) const; // prints a specific contact (used in printPhonebook)
+        std::string formatField(const std::string& str) const; // formats info before printing (used in printPhonebook)
 };
 
-/* USO DE CONST&
-   Quando criamos um paramatro coo std::string str, passamos por valor, copiando a string original.
-   QUando fazemos std::string& str, nos passamos a string original por referencia, e tudo que modificarmos dentro do metodo sera modificado na string original
-   e se fizermos const std::string& str?
-   - passamos a string por referencia, nao perdemos "tempo" copiando outra
-   - mas tambem nao tempos hipotese de modifica-la, pois ela e const! 
+/* USE OF const&
+   When we declare a parameter as std::string str, we pass by value, copying the original string.
+   When we use std::string& str, we pass the original string by reference, and changes in the method
+   modify the original string.
+   What about const std::string& str?
+   - We pass by reference, avoiding the cost of copying.
+   - We also cannot modify it, because it is const!
 */
 #endif
