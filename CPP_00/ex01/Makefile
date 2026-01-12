@@ -6,7 +6,7 @@
 #    By: ggoncalv <ggoncalv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:02:15 by ggoncalv          #+#    #+#              #
-#    Updated: 2025/12/22 15:41:42 by ggoncalv         ###   ########.fr        #
+#    Updated: 2026/01/11 11:47:17 by ggoncalv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = phonebook
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp phonebook.cpp contact.cpp
+SRC = main.cpp PhoneBook.cpp Contact.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

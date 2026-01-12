@@ -19,15 +19,14 @@ Contact::Contact(const std::string& first, const std::string& last, const std::s
       nickname(nick),
       phoneNumber(phone),
       darkestSecret(darkest) {
-    // Corpo vazio pq tudo ja foi inicializado na lista
+    // Empty body because all fields are already initialized in the list
 }
 
 /*
     INITIALIZATION LIST:
-    Voce inicia os atributos ja com o valor que voce quer. 
-    quando voce faz da forma normal, o compilador primeiro cria o atributo com uma string vazia,
-    e depois assinala o valor
-    
+    You initialize the members directly with the desired values.
+    If done in the constructor body, the compiler first creates the member with
+    a default value (e.g., empty string) and then assigns the new value.
 */
 std::string Contact::getFirstName() const {
     return this->firstName;
@@ -49,11 +48,11 @@ std::string Contact::getDarkestSecret() const {
     return this->darkestSecret;
 }
 
-/* USO DE CONST NOS GETTERS
-   Ao utilizar o const, voce garante alguns pontos:
-   1. caso alguem mude o metodo e ele passe a tentar alterar o atributo, da erro de compilacao. 
-   2. pode acessar um atributo de um objeto instanciado como const, porque assim garante que nada mudara
-      (se o objeto for const e o getter nao, tambem da erro de compilacao)
-   Utilizar const nos metodos que apenas leem dados tambem e importante em termos de documentacao.
-   E uma forma de deixar explicito que estes metodos nao modificam o objeto/metodo.
+/* USE OF const IN GETTERS
+    By marking getters as const, you ensure:
+    1. If someone changes the method to modify a member, it will fail to compile.
+    2. You can call the getter on a const object, guaranteeing no modification
+        (if the object is const and the getter is not, it fails to compile).
+    Using const for read-only methods also improves documentation: it makes
+    explicit that these methods do not modify the object/state.
 */
