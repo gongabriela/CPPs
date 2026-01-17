@@ -30,8 +30,3 @@ Zombie::~Zombie() {
 void    Zombie::setName(std::string name) {
     this->name = name;
 }
-/*
-    Quando você usa delete, o destrutor é chamado automaticamente antes de 
-    liberar a memória. O zombie na stack (randomChump) terá seu destrutor 
-    chamado automaticamente ao final da função.
-*/

@@ -1,19 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggoncalv <ggoncalv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/26 15:24:03 by ggoncalv          #+#    #+#             */
-/*   Updated: 2025/12/26 15:24:03 by ggoncalv         ###   ########.fr       */
+/*   Created: 2026/01/15 21:11:57 by ggoncalv          #+#    #+#             */
+/*   Updated: 2026/01/15 21:11:57 by ggoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-Zombie* newZombie(std::string name) {
-    Zombie* ret = new Zombie;
-    ret->setName(name);
-    return ret;
-}
+#include "Fixed.hpp"
