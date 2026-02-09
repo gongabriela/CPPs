@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ggoncalv <ggoncalv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/12/30 21:16:41 by ggoncalv          #+#    #+#              #
-#    Updated: 2025/12/30 21:16:41 by ggoncalv         ###   ########.fr        #
+#    Created: 2026/02/07 09:23:09 by ggoncalv          #+#    #+#              #
+#    Updated: 2026/02/07 09:23:09 by ggoncalv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fixed
+NAME = FragTrap
 
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

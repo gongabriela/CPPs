@@ -15,14 +15,15 @@
 
 class   Fixed {
     private:
-        int _fixedPointValue;
-        static const int _fractionalBits = 8;
+        int _fixedPointValue; //rawbits
+        static const int _fractionalBits = 8; //rep of the fract part of the fixed point number
     public:
         Fixed(); //default constructor
         Fixed(const Fixed &src); //copy constructor
-        Fixed &operator=(const Fixed &rhs); // copy assigment operator
+        Fixed& operator=(const Fixed &rhs); // copy assigment operator
         ~Fixed(); // destructor
-        int getRawBits(void) const;
+
+        int     getRawBits(void) const;
         void    setRawBits(int const raw);
 
 }; 

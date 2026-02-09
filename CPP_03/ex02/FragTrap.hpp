@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggoncalv <ggoncalv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 21:11:57 by ggoncalv          #+#    #+#             */
-/*   Updated: 2026/01/15 21:11:57 by ggoncalv         ###   ########.fr       */
+/*   Created: 2026/02/09 16:04:55 by ggoncalv          #+#    #+#             */
+/*   Updated: 2026/02/09 16:04:55 by ggoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main (void) {
-    Fixed a;
-    Fixed b(a);
-    Fixed c;
+# include "ClapTrap.hpp"
 
-    c = b;
+class FragTrap : public ClapTrap {
+    public:
+        FragTrap();
+        FragTrap(const std::string &name);
+        FragTrap(const FragTrap &other);
+        FragTrap &operator=(const FragTrap &other);
+        ~FragTrap();
 
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+        void highFivesGuys(void);
+};
 
-    return 0;
-}
+#endif
+
