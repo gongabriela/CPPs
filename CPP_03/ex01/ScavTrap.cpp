@@ -22,7 +22,7 @@ ScavTrap::ScavTrap() : ClapTrap() {
     std::cout << "ScavTrap default constructor called for " << _name << std::endl;
 }
 
-//default constructor com o nome
+//constructor with name attribution
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
     _hitPoints = 100;
     _energyPoints = 50;

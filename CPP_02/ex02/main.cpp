@@ -14,9 +14,6 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-    // ==========================================================
-    // INICIO DA MAIN DO SUBJECT
-    // ==========================================================
     std::cout << "========= SUBJECT TESTS =========" << std::endl;
     
     Fixed a;
@@ -34,20 +31,16 @@ int main( void ) {
 
     std::cout << "========= END OF SUBJECT TESTS =========" << std::endl << std::endl;
 
-
-    // ==========================================================
-    // INICIO DOS MEUS TESTES (ROBUSTOS)
-    // ==========================================================
     std::cout << "========= EXTRA ROBUST TESTS =========" << std::endl;
 
-    std::cout << "--- Testes de Comparação ---" << std::endl;
+    std::cout << "--- Comparation tests ---" << std::endl;
     Fixed const c( 10 );
     Fixed const d( 20 );
-    std::cout << "c (10) < d (20)  : " << (c < d) << " (esperado: 1)" << std::endl;
-    std::cout << "c (10) > d (20)  : " << (c > d) << " (esperado: 0)" << std::endl;
-    std::cout << "c (10) == c (10) : " << (c == c) << " (esperado: 1)" << std::endl;
+    std::cout << "c (10) < d (20)  : " << (c < d) << " (expected: 1)" << std::endl;
+    std::cout << "c (10) > d (20)  : " << (c > d) << " (expected: 0)" << std::endl;
+    std::cout << "c (10) == c (10) : " << (c == c) << " (expected: 1)" << std::endl;
 
-    std::cout << "\n--- Testes de Aritmética Avançada ---" << std::endl;
+    std::cout << "\n--- Advanced Arithmetic Tests ---" << std::endl;
     Fixed e( 2.5f );
     Fixed f( 2 );
     std::cout << "2.5 + 2 = " << (e + f) << std::endl;
@@ -55,26 +48,26 @@ int main( void ) {
     std::cout << "2.5 * 2 = " << (e * f) << std::endl;
     std::cout << "2.5 / 2 = " << (e / f) << std::endl;
 
-    std::cout << "\n--- Testes de Decremento ---" << std::endl;
+    std::cout << "\n--- Decrement Tests ---" << std::endl;
     Fixed g( 1 );
     std::cout << "g inicial: " << g << std::endl;
     std::cout << "--g      : " << --g << std::endl;
     std::cout << "g--      : " << g-- << std::endl;
     std::cout << "g final  : " << g << std::endl;
 
-    std::cout << "\n--- Testes de Min/Max Estáticos ---" << std::endl;
-    // Testando com referências constantes
+    std::cout << "\n--- Static Min/Max Tests ---" << std::endl;
+    // Testing with constant references
     std::cout << "min(c, d) : " << Fixed::min( c, d ) << std::endl;
-    // Testando com referências não-constantes
+    // Testing with non-constant references
     Fixed i( 500 );
     Fixed j( 1000 );
     std::cout << "max(i, j) : " << Fixed::max( i, j ) << std::endl;
 
-    std::cout << "\n--- Teste de Encadeamento (Referência) ---" << std::endl;
+    std::cout << "\n--- Chaining Test (Reference) ---" << std::endl;
     Fixed k( 0 );
-    std::cout << "k antes de ++++++k: " << k << std::endl;
+    std::cout << "k before ++++++k: " << k << std::endl;
     ++++++k;
-    std::cout << "k depois de ++++++k: " << k << " (deve ser 3 * epsilon)" << std::endl;
+    std::cout << "k after ++++++k: " << k << " (should be 3 * epsilon)" << std::endl;
 
     std::cout << "========= END OF EXTRA TESTS =========" << std::endl;
 

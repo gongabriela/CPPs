@@ -14,52 +14,52 @@
 #include "ScavTrap.hpp"
 
 int main() {
-    std::cout << "### TESTE 1: CONSTRUTOR E CADEIA DE HERANÇA ###" << std::endl;
+    std::cout << "### TEST 1: CONSTRUCTOR AND INHERITANCE CHAIN ###" << std::endl;
     {
-        // Criação na Stack: Deve chamar ClapTrap Construtor -> ScavTrap Construtor
+        // Stack Creation: Should call ClapTrap Constructor -> ScavTrap Constructor
         ScavTrap robot("Serena");
         
-        std::cout << "\n--- Testando Atributos e Métodos ---" << std::endl;
-        // Deve imprimir: "ScavTrap Serena attacks..." (Dano 20)
-        robot.attack("Inimigo"); 
+        std::cout << "\n--- Testing Attributes and Methods ---" << std::endl;
+        // Should print: "ScavTrap Serena attacks..." (Damage 20)
+        robot.attack("Enemy"); 
         
-        // Deve usar a função do pai (ClapTrap), mas com HP 100
+        // Should use the parent function (ClapTrap), but with HP 100
         robot.takeDamage(10); 
         robot.beRepaired(10); 
 
-        // Função exclusiva do ScavTrap
+        // ScavTrap exclusive function
         robot.guardGate();
         
-        std::cout << "\n--- Fim do Escopo (Destruição) ---" << std::endl;
-        // Aqui deve chamar: ScavTrap Destructor -> ClapTrap Destructor
+        std::cout << "\n--- End of Scope (Destruction) ---" << std::endl;
+        // Here should call: ScavTrap Destructor -> ClapTrap Destructor
     }
 
-    std::cout << "\n\n### TESTE 2: FORMA CANÔNICA (CÓPIA E ATRIBUIÇÃO) ###" << std::endl;
+    std::cout << "\n\n### TEST 2: CANONICAL FORM (COPY AND ASSIGNMENT) ###" << std::endl;
     {
         ScavTrap original("Original");
         
-        std::cout << "\n[Copiando...]" << std::endl;
+        std::cout << "\n[Copying...]" << std::endl;
         ScavTrap copia(original); // Copy Constructor
         
-        std::cout << "\n[Atribuindo...]" << std::endl;
+        std::cout << "\n[Assigning...]" << std::endl;
         ScavTrap atribuido("Temp");
         atribuido = original; // Copy Assignment Operator
         
-        std::cout << "\n--- Destruindo as cópias ---" << std::endl;
+        std::cout << "\n--- Destroying copies ---" << std::endl;
     }
 
-    std::cout << "\n\n### TESTE 3: POLIMORFISMO (O TESTE DO DESTRUTOR VIRTUAL) ###" << std::endl;
-    std::cout << "Se o destrutor do ClapTrap nao for virtual, o ScavTrap vaza memoria aqui!" << std::endl;
+    std::cout << "\n\n### TEST 3: POLYMORPHISM (VIRTUAL DESTRUCTOR TEST) ###" << std::endl;
+    std::cout << "If the ClapTrap destructor is not virtual, ScavTrap will leak memory here!" << std::endl;
     {
-        // Ponteiro de ClapTrap apontando para ScavTrap
+        // ClapTrap pointer pointing to ScavTrap
         ClapTrap* ptr = new ScavTrap("HeapRobot");
         
-        // O ataque aqui vai chamar o do ClapTrap se não for virtual, 
-        // ou ScavTrap se attack for virtual (o subject não exige attack virtual, mas é bom saber)
+        // The attack here will call ClapTrap's if not virtual, 
+        // or ScavTrap's if attack is virtual (the subject doesn't require attack to be virtual, but it's good to know)
         ptr->attack("Target"); 
 
-        std::cout << "\n[Deletando via ponteiro base...]" << std::endl;
-        delete ptr; // IMPORTANTE: Deve chamar ~ScavTrap e depois ~ClapTrap
+        std::cout << "\n[Deleting via base pointer...]" << std::endl;
+        delete ptr; // IMPORTANT: Should call ~ScavTrap then ~ClapTrap
     }
 
     return 0;

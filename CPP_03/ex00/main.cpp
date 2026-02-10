@@ -17,10 +17,10 @@ int main() {
     ClapTrap a("Ash");
     
     a.attack("Pikachu");
-    a.takeDamage(5); // HP vai pra 5
-    a.beRepaired(2); // HP vai pra 7, Energia cai
-    a.takeDamage(10); // Deve morrer e zerar HP (sem bugar o unsigned)
-    a.attack("Someone"); // Não deve conseguir atacar pois HP é 0
+    a.takeDamage(5); // HP turns 5
+    a.beRepaired(2); // HP turns 7, Energy drops
+    a.takeDamage(10); // Should die and should zero HP (without breaking the unsigned)
+    a.attack("Someone"); // Should not be able to attack because HP is 0
     
     return 0;
 }
