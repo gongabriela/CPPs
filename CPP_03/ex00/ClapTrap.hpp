@@ -17,17 +17,17 @@
 
 class ClapTrap {
     private:
-        std::string _name; //name
-        unsigned int _hitPoints; //hit points (10)
-        unsigned int _energyPoints; //energy points (10)
-        unsigned int _attackDamage; //attack damage (0)
+        std::string _name;
+        unsigned int _hitPoints; //(10)
+        unsigned int _energyPoints; //(10)
+        unsigned int _attackDamage; //(0)
 
     public: 
-        ClapTrap();//default constructor
-        ClapTrap(const std::string& name);//default constructor
-        ClapTrap(const ClapTrap& other);//copy constructor
-        ClapTrap& operator=(const ClapTrap& other);//copy assingment operator overload
-        ~ClapTrap();//default destructor
+        ClapTrap();
+        ClapTrap(const std::string& name);
+        ClapTrap(const ClapTrap& other);
+        ClapTrap& operator=(const ClapTrap& other);
+        ~ClapTrap();
 
         void attack(const std::string& target); // causes its target to lose attack damage hit points.
         void takeDamage(unsigned int amount);  //receives the damage

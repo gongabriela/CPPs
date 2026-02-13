@@ -45,7 +45,7 @@ int main( void ) {
     Fixed f( 2 );
     std::cout << "2.5 + 2 = " << (e + f) << std::endl;
     std::cout << "2.5 - 2 = " << (e - f) << std::endl;
-    std::cout << "2.5 * 2 = " << (e * f) << std::endl;
+    std::cout << "2.5 * 0 = " << (e * f) << std::endl;
     std::cout << "2.5 / 2 = " << (e / f) << std::endl;
 
     std::cout << "\n--- Decrement Tests ---" << std::endl;
@@ -72,4 +72,55 @@ int main( void ) {
     std::cout << "========= END OF EXTRA TESTS =========" << std::endl;
 
     return 0;
+// std::cout << "\n========= ZERO & PRECISION TESTS =========" << std::endl;
+
+//     Fixed z1(0);
+//     Fixed z2(0.0f);
+//     Fixed pos(42.5f);
+//     Fixed neg(-42.5f);
+
+//     std::cout << "--- 1. Construtores & Igualdade ---" << std::endl;
+//     std::cout << "z1 (int 0)   : " << z1 << " (raw: " << z1.getRawBits() << ")" << std::endl;
+//     std::cout << "z2 (float 0) : " << z2 << " (raw: " << z2.getRawBits() << ")" << std::endl;
+//     std::cout << "z1 == z2     : " << (z1 == z2) << " (esperado: 1)" << std::endl;
+
+//     std::cout << "\n--- 2. Multiplicação (O Aniquilador) ---" << std::endl;
+//     // Qualquer coisa * 0 deve dar 0
+//     Fixed res1 = pos * z1;
+//     Fixed res2 = neg * z1;
+//     Fixed res3 = z1 * z2; // 0 * 0
+
+//     std::cout << "42.5 * 0     : " << res1 << " (esperado: 0)" << std::endl;
+//     std::cout << "-42.5 * 0    : " << res2 << " (esperado: 0)" << std::endl;
+//     std::cout << "0 * 0        : " << res3 << " (esperado: 0)" << std::endl;
+
+//     std::cout << "\n--- 3. Divisão (0 no Numerador) ---" << std::endl;
+//     // 0 divido por qualquer coisa deve ser 0
+//     Fixed res4 = z1 / pos;
+    
+//     std::cout << "0 / 42.5     : " << res4 << " (esperado: 0)" << std::endl;
+    
+//     // CUIDADO: Não testes pos / z1 (Divisão por zero) se não tiveres proteção!
+    
+//     std::cout << "\n--- 4. Soma e Subtração Neutra ---" << std::endl;
+//     std::cout << "42.5 + 0     : " << (pos + z1) << " (esperado: 42.5)" << std::endl;
+//     std::cout << "42.5 - 0     : " << (pos - z1) << " (esperado: 42.5)" << std::endl;
+//     std::cout << "0 - 42.5     : " << (z1 - pos) << " (esperado: -42.5)" << std::endl;
+//     std::cout << "0 - 0        : " << (z1 - z2) << " (esperado: 0)" << std::endl;
+
+//     std::cout << "\n--- 5. O Limite da Precisão (Epsilon) ---" << std::endl;
+//     // O menor bit representável é 1/256 = 0.00390625
+//     // O que acontece se passarmos um número menor que isso?
+    
+//     Fixed tiny(0.001f); // 0.001 é menor que 0.0039
+    
+//     std::cout << "Fixed(0.001f): " << tiny << std::endl;
+//     std::cout << "Raw Bits     : " << tiny.getRawBits() << std::endl;
+    
+//     if (tiny.getRawBits() == 0)
+//         std::cout << "-> DIAGNÓSTICO: O número foi arredondado para 0 (Perda de precisão esperada)." << std::endl;
+//     else
+//         std::cout << "-> DIAGNÓSTICO: O número sobreviveu (arredondou para cima)." << std::endl;
+
+//     std::cout << "==========================================" << std::endl;
 }

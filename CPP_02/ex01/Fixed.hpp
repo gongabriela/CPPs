@@ -17,24 +17,24 @@
 
 class   Fixed {
     private:
-        int _fixedPointValue; //rawbits
-        static const int _fractionalBits = 8; //rep of the fract part of the fixed point number
+        int _fixedPointValue;
+        static const int _fractionalBits = 8;
     public:
-        Fixed(); //default constructor
-        Fixed(const int n);//constructor of an integer
-        Fixed(const float f);//constructor of a float
-        Fixed(const Fixed &src); //copy constructor
-        Fixed& operator=(const Fixed &rhs); // copy assignment operator
-        ~Fixed(); // destructor
+        Fixed();
+        Fixed(const int n);
+        Fixed(const float f);
+        Fixed(const Fixed &src);
+        Fixed& operator=(const Fixed &rhs);
+        ~Fixed();
 
         int     getRawBits(void) const;
         void    setRawBits(int const raw);
         
-        float   toFloat(void) const; //fixed to float
-        int     toInt(void) const; //fixed to int
+        float   toFloat(void) const;
+        int     toInt(void) const;
 
 }; 
 
-std::ostream& operator<<(std::ostream &out, const Fixed &fixed); //operator overload 
+std::ostream& operator<<(std::ostream &out, const Fixed &fixed); 
 
 #endif

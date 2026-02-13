@@ -13,7 +13,6 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-//default constructor
 ScavTrap::ScavTrap() : ClapTrap() {
     _name = "Default_ScavTrap";
     _hitPoints = 100;
@@ -22,7 +21,6 @@ ScavTrap::ScavTrap() : ClapTrap() {
     std::cout << "ScavTrap default constructor called for " << _name << std::endl;
 }
 
-//constructor with name attribution
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
     _hitPoints = 100;
     _energyPoints = 50;
@@ -30,12 +28,10 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
     std::cout << "ScavTrap constructor called for " << _name << std::endl;
 }
 
-//copy constructor
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
     std::cout << "ScavTrap copy constructor called for " << _name << std::endl;
 }
 
-//copy assignment operator overload
 ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
     if (this != &other) {
         ClapTrap::operator=(other); // Call the base class assignment operator
@@ -44,12 +40,10 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
     return *this;
 }
 
-//destructor
 ScavTrap::~ScavTrap() {
     std::cout << "ScavTrap destructor called for " << _name << std::endl;
 }
 
-//attack()
 void ScavTrap::attack(const std::string &target) {
     if (_energyPoints > 0 && _hitPoints > 0) {
         std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
@@ -59,7 +53,6 @@ void ScavTrap::attack(const std::string &target) {
     }
 }
 
-//guardGate()
 void ScavTrap::guardGate() {
     std::cout << "ScavTrap " << _name << " is now in Gate keeper mode." << std::endl;
 }

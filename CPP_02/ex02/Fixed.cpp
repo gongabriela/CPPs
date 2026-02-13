@@ -140,37 +140,18 @@ Fixed Fixed::operator--(int) {
     return temp;
 }
 
-/**
- * min (versão normal): Recebe referências para dois objetos Fixed e retorna 
- * uma referência para o menor deles.
- */
-
 Fixed& Fixed::min(Fixed &a, Fixed &b) {
     return (a < b) ? a : b;
 }
 
-/**
- * min (versão constante): Recebe referências para dois objetos const Fixed e 
- * retorna uma referência para o menor deles (também constante).
- */
-
- const Fixed& Fixed::min(const Fixed &a, const Fixed &b) {
+const Fixed& Fixed::min(const Fixed &a, const Fixed &b) {
     return (a < b) ? a : b;
- }
+}
 
-/**
- * max (versão normal): Recebe referências para dois objetos Fixed e retorna 
- * uma referência para o maior deles.
- */
-
- Fixed& Fixed::max(Fixed &a, Fixed &b) {
+Fixed& Fixed::max(Fixed &a, Fixed &b) {
     return (a > b) ? a : b;
- }
+}
 
- /**
-  * max (versão constante): Recebe referências para dois objetos const Fixed e 
-  * retorna uma referência para o maior deles (também constante)
-  */
-  const Fixed& Fixed::max(const Fixed &a, const Fixed &b) {
+const Fixed& Fixed::max(const Fixed &a, const Fixed &b) {
     return (a > b) ? a : b;
- }
+}

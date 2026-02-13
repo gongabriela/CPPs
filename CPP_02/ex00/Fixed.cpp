@@ -29,10 +29,8 @@ Fixed::Fixed(const Fixed& src) {
 
 Fixed& Fixed::operator=(const Fixed& rhs) {
     std::cout << "Copy assignment operator called" << std::endl;
-    //checks if it is not self-assignment
     if (this != &rhs)
-        this->_fixedPointValue = rhs.getRawBits(); //copies getRawBits from rhs to _fixedPointValue
-    //returns *this
+        this->_fixedPointValue = rhs.getRawBits();
     return *this;
 }
 
