@@ -13,9 +13,8 @@
 #include "Fixed.hpp"
 #include <iostream>
 
-Fixed::Fixed() {
+Fixed::Fixed() : _fixedPointValue(0) {
     std::cout << "Default constructor called" << std::endl;
-    this->_fixedPointValue = 0;
 }
 
 Fixed::~Fixed() {
