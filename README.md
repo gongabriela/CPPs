@@ -91,14 +91,18 @@ make
 
 ---
 
-## 📖 Resources
+## 🧠 Knowledge Base & Wiki
 
-Learning C++ through these modules involves understanding:
-- The transition from C to C++
-- Object-Oriented Programming (OOP) principles
-- Memory management and RAII
-- Operator overloading and polymorphism
-- Templates and STL (Standard Template Library)
+Beyond the code implementation, I have documented the theoretical concepts, logic, and "gotchas" of each module in the repository's **Wiki**. 
+
+This documentation serves as a study guide for students who want to understand the *why* behind the code, covering topics such as:
+
+* **Memory Management:** Stack vs Heap, `new`/`delete`, and deep copies.
+* **OOP Principles:** Encapsulation, Inheritance, and Polymorphism.
+* **C++ Specifics:** Orthodox Canonical Form, Virtual Destructors, and References.
+* **Math & Logic:** Fixed-Point arithmetic and bitwise operations.
+
+👉 **[Click here to access the Wiki](https://github.com/gongabriela/CPPs/wiki)** and dive deeper into the concepts!
 
 ---
 
