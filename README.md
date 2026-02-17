@@ -40,6 +40,38 @@ Deep dive into memory management, pointers, references, and understanding the di
 
 ---
 
+### ✅ [CPP Module 02](./CPP_02) - Ad-hoc Polymorphism, Operator Overloading and Orthodoxy
+Introduction to Ad-hoc polymorphism, operator overloading, and the Orthodox Canonical Form (OCF). This module focuses on creating a robust Fixed-Point number class to understand class mechanics deeply.
+
+**Topics covered:**
+- Ad-hoc polymorphism (Operator Overloading)
+- Orthodox Canonical Form (Default constructor, Copy constructor, Copy assignment operator, Destructor)
+- Fixed-point arithmetic vs Floating-point
+- `const` correctness in member functions
+
+**Exercises:**
+- **ex00**: My First Class in Orthodox Canonical Form - Fixed point class basics
+- **ex01**: Towards a more useful fixed-point number class - Bit shifting and int/float conversion
+- **ex02**: Now we’re talking - Overloading arithmetic, comparison, and increment/decrement operators
+
+---
+
+### ✅ [CPP Module 03](./CPP_03) - Inheritance
+Introduction to Inheritance in C++. This module involves creating a hierarchy of robots (ClapTrap, ScavTrap, FragTrap, DiamondTrap) to understand how attributes and behaviors are shared, extended, or overridden between parent and child classes.
+
+**Topics covered:**
+- Inheritance mechanics (Single and Multiple)
+- Access specifiers (`public`, `protected`, `private`)
+- Constructor and Destructor chaining
+- Virtual destructors and memory management in inheritance
+
+**Exercises:**
+- **ex00**: Aaaaand... OPEN! - Creating the base ClapTrap class
+- **ex01**: Serena, my love! - Creating ScavTrap (Inheritance and Guard Gate)
+- **ex02**: Repetitive work - Creating FragTrap (Inheritance and High Fives)
+
+---
+
 ### 🚧 More Modules Coming Soon...
 
 ---
