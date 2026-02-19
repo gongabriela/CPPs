@@ -25,7 +25,7 @@ $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 debug:
-	$(CPP) $(CPPFLAGS) -g $(SRC) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(SRC) -o $(NAME)
 	gdb --tui $(NAME)
 
 valgrind:
