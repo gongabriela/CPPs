@@ -72,6 +72,55 @@ Introduction to Inheritance in C++. This module involves creating a hierarchy of
 
 ---
 
+### ✅ CPP Module 04 - Subtype Polymorphism, Abstract Classes, Interfaces
+Introduction to subtype polymorphism, abstract classes, and interfaces in C++. This module explores how to use virtual functions to achieve dynamic binding and interface implementation.
+
+**Topics covered:**
+- Subtype polymorphism
+- Abstract classes and pure virtual functions
+- Interfaces
+- Deep copies with polymorphic classes
+
+**Exercises:**
+- **ex00**: Polymorphism - Base and derived classes (`Animal`, `Dog`, `Cat`)
+- **ex01**: I don’t want to set the world on fire - Deep copy and memory management (`Brain`)
+- **ex02**: Abstract class - Preventing instantiation of base classes
+- **ex03**: Interface & recap - Comprehensive exercise with Materias and Interfaces
+
+---
+
+### ✅ CPP Module 05 - Repetition and Exceptions
+Introduction to exception handling in C++. This module focuses on using `try`, `catch`, and custom exception classes to handle runtime errors gracefully.
+
+**Topics covered:**
+- Exception handling (`try`, `catch`, `throw`)
+- Standard exceptions (`std::exception`)
+- Custom nested exception classes (e.g., `GradeTooHighException`)
+
+**Exercises:**
+- **ex00**: Mommy, when I grow up, I want to be a bureaucrat! - Basic exceptions with the `Bureaucrat` class
+- **ex01**: Form up, maggots! - The `Form` class and signing logic
+- **ex02**: No, you need form 28B, not 28C... - Concrete executable forms (`ShrubberyCreationForm`, `RobotomyRequestForm`, `PresidentialPardonForm`)
+- **ex03**: At least this beat coffee making - The `Intern` class creating forms dynamically
+
+---
+
+### ✅ CPP Module 06 - C++ Casts
+Deeply understand the different casting operators available in C++ (`static_cast`, `reinterpret_cast`, and `dynamic_cast`), moving away from the traditional C-style casts.
+
+**Topics covered:**
+- `static_cast` for well-defined logical conversions
+- `reinterpret_cast` for raw memory manipulation
+- `dynamic_cast` for Run-Time Type Identification (RTTI)
+- Object serialization and deserialization
+
+**Exercises:**
+- **ex00**: Scalar Converter - Parsing strings and converting between scalar types
+- **ex01**: Serialization - Simulating serialization using `uintptr_t`
+- **ex02**: Identify Real Type - Identifying true object types at run-time without `<typeinfo>`
+
+---
+
 ### 🚧 More Modules Coming Soon...
 
 ---
