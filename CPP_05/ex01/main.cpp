@@ -15,6 +15,7 @@
 #include <iostream>
 
 int main() {
+    
     std::cout << "\n--- TEST 1: Form Constructor Exceptions ---" << std::endl;
     try {
         std::cout << "Trying to create a form with sign grade 0..." << std::endl;
@@ -30,26 +31,22 @@ int main() {
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
 
-    std::cout << "\n--- TEST 2: Form operator<< ---" << std::endl;
+    std::cout << "\n--- TEST 2: Bureaucrat with sufficient grade signs the form ---" << std::endl;
     Form taxForm("28B", 50, 20);
-    std::cout << taxForm << std::endl; 
-
-    std::cout << "\n--- TEST 3: Bureaucrat with sufficient grade signs the form ---" << std::endl;
     Bureaucrat alice("Alice", 10); 
     std::cout << alice << std::endl;
-    
+    std::cout << taxForm << std::endl; 
     alice.signForm(taxForm); 
     std::cout << taxForm << std::endl; 
 
-    std::cout << "\n--- TEST 4: Bureaucrat with INSUFFICIENT grade tries to sign ---" << std::endl;
+    std::cout << "\n--- TEST 3: Bureaucrat with INSUFFICIENT grade tries to sign ---" << std::endl;
     Bureaucrat bob("Bob", 100); 
     Form secretForm("Top Secret", 10, 5); 
-    
     std::cout << bob << std::endl;
     std::cout << secretForm << std::endl;
-
     bob.signForm(secretForm); 
-
+    std::cout << secretForm << std::endl;
+    
     std::cout << "\n--- END OF TESTS ---" << std::endl;
 
     return 0;

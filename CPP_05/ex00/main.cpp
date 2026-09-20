@@ -14,30 +14,31 @@
 #include <iostream>
 
 int main() {
+    //test 1: instantiate a Bureaucrat with an invalid grade
     try {
-        Bureaucrat b1("Alice", 1);
-        std::cout << b1 << std::endl;
-        b1.incrementGrade(); // This should throw an exception
+        Bureaucrat b1("Alice", -15473971);
+    } catch (const std::exception &e) {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
+    try {
+        Bureaucrat b2("Bob", 1544444);
+    } catch (const std::exception &e) {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
+
+    //test2: instantiate a Bureaucrat with a valid grade and increment/decrement it to be invalid
+    try {
+        Bureaucrat b3("Charlie", 1);
+        std::cout << b3 << std::endl;
+        b3.incrementGrade(); // This should throw an exception
     } catch (const std::exception &e) {
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
 
     try {
-        Bureaucrat b2("Bob", 150);
-        std::cout << b2 << std::endl;
-        b2.decrementGrade(); // This should throw an exception
-    } catch (const std::exception &e) {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    }
-
-    try {
-        Bureaucrat b3("Charlie", 0); // This should throw an exception
-    } catch (const std::exception &e) {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    }
-
-    try {
-        Bureaucrat b4("Dave", 151); // This should throw an exception
+        Bureaucrat b4("Dave", 150);
+        std::cout << b4 << std::endl;
+        b4.decrementGrade(); // This should throw an exception 
     } catch (const std::exception &e) {
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }

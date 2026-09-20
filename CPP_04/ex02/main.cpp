@@ -15,10 +15,10 @@
 #include "Cat.hpp"
 
 int main() {
-    // ISSO AQUI TEM QUE DAR ERRO DE COMPILAÇÃO:
-    //Animal* a = new Animal(); 
+    //This will give compilation errrors
+    Animal* a = new Animal(); 
     
-    // ISSO AQUI TEM QUE FUNCIONAR NORMALMENTE:
+    //This will not give compilation errors
     Animal* b = new Dog();
     
     //delete a;

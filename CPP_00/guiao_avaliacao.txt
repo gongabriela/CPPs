@@ -1,0 +1,58 @@
+COMPILACAO
+    c++, -wall -wextra -werror, -std=c++98
+
+FORMATACAO E CONVENCOES
+    1. diretorios tem que ser ex0n
+    2. nomes das classes tem que ser em UpperCAmelCase, e os arquivos .cpp tem que 
+       ter o nome do arquivo da classe.
+    3. mensagens tem que ter \n e mostradas no standard output
+    4. nao pode usar bibliotecas externas nem printf(), alloc() e free().
+    5. nao pode usar namespace <ns_name>
+    6. nao pode haver implementacao de funcoes nos header files
+    7. You should be able to use each of your headers independently from others. Thus,
+       they must include all the dependencies they need. However, you must avoid the
+       problem of double inclusion by adding include guards. Otherwise, your grade will
+       be 0.
+    8. As mesmas regras de makefile para os projetos em C se aplicam aqui.
+
+ex00
+    nao tem mto o que testar e verificar
+
+ex01
+    implementar classe PhoneBook
+        contem um array de contactos
+        pode guardar no maximo 8 contactos
+        se o usuario tenta adicionar o 9 contacto, ele substitui o contacto mais antigo
+        nao pode usar alocacao dinamica de memoria
+
+    implementar classe Contacts
+
+    o phoneboook precisa ser uma instancia da classe phonebook, e a mesma coisa para os
+    contactos.
+    
+    tudo que e somente usado dentro da propria classe tem que ser privado,
+    e tudo que pode ser usad ofora e publico.
+
+    no inicio do programa, o phonebook ta vazio e o usuario pode escolher entre tres
+    comandos: ADD, SEARCH e EXIT. todo o resto e ignorado.
+
+    ADD
+        usuario precisa preencher todos os campos, nao podemos adicionar o contacto
+        com campos vazios.
+        first name, last name, nickname, phone number, darkest secret.
+
+    SEARCH
+        tabela com 4 colunas: index, first name, last name, nickname
+        um pipe separa cada coluna
+        cada coluna tem que ser 10 chars de tamanho
+        se o texto for maior, truncar e por um '.'
+        o texto tem que ser alinhado para a direita
+        depois de mostrar a tabela, mostra o prompt para o user escolher um index
+        a partir de index mostramos as informacoes totais do contacto, 
+        um campo por linha
+        mas se o usuario mandar um input de index incorreto, lidar com ele
+    
+    EXIT
+        sai do programa
+    
+    o menu fica em REPL, so saimos dele se o usuario escrever EXIT

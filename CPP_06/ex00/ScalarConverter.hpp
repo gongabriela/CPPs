@@ -18,13 +18,11 @@
 
 class ScalarConverter {
     private:
-        // OCF 
         ScalarConverter();
         ScalarConverter(const ScalarConverter& other);
         ScalarConverter& operator=(const ScalarConverter& other);
         ~ScalarConverter();
 
-        // Detectors
         static bool isPseudoLiteral(const std::string& literal);
         static bool isChar(const std::string& literal);
         static bool isInt(const std::string& literal);
@@ -32,7 +30,6 @@ class ScalarConverter {
         static bool isFloat(const std::string& literal);
         static bool isDouble(const std::string& literal);
 
-        // Printers
         static void printPseudo(const std::string& literal);
         static void printChar(double val);
         static void printInt(double val);

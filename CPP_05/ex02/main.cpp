@@ -56,9 +56,7 @@ int main() {
     try {
         Bureaucrat manager("Manager", 40);
         RobotomyRequestForm robot("R2D2");
-
-        // manager.signForm(robot); // We forgot to sign on purpose!
-        manager.executeForm(robot); // Should throw an error stating it is not signed
+        manager.executeForm(robot);
     } catch (std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
     }

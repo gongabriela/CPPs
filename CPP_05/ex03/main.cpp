@@ -36,7 +36,6 @@ int main() {
     ppf = someRandomIntern.makeForm("presidential pardon", "Ford Prefect");
 
     std::cout << "\n[4] Testing Unknown Form (Invalid / Edge Case):" << std::endl;
-    // This should print an explicit error message and return NULL
     unknown = someRandomIntern.makeForm("make coffee request", "Intern");
 
 
@@ -45,7 +44,7 @@ int main() {
     std::cout << "=========================================\n" << std::endl;
 
     try {
-        Bureaucrat boss("Hermes Conrad", 1); // Highest possible grade
+        Bureaucrat boss("Hermes Conrad", 1);
         std::cout << boss << std::endl;
 
         if (rrf) {
@@ -63,8 +62,6 @@ int main() {
     std::cout << "       CLEANUP (MEMORY MANAGEMENT)" << std::endl;
     std::cout << "=========================================\n" << std::endl;
 
-    // Deleting the allocated forms to prevent memory leaks.
-    // Note: 'unknown' is expected to be NULL, and deleting NULL is safe in C++.
     delete rrf;
     delete scf;
     delete ppf;

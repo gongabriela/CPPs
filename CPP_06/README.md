@@ -40,6 +40,13 @@ To create a polymorphic base class and randomly generate derived classes (`A`, `
   * Because C++ does not allow null references, when `dynamic_cast` fails with a **reference**, it throws a `std::bad_cast` exception.
 * **Exception Handling:** Using `try { ... } catch (std::exception& e) { ... }` blocks to cleanly figure out an object's identity by process of elimination without crashing the program.
 
+/**
+ * @brief Standard virtual destructor.
+ * * Absolutely necessary to make the Base class polymorphic.
+ * Without a virtual method, the compiler does not generate the virtual function table (vtable),
+ * RTTI (Run-Time Type Information) fails, and dynamic_cast cannot be used.
+ */
+ 
 ---
 
 ## 🚀 Compilation & Usage
