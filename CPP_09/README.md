@@ -12,3 +12,11 @@ ex01
 https://en.wikipedia.org/wiki/Reverse_Polish_notation
 https://en.cppreference.com/cpp/container/stack
 https://www.geeksforgeeks.org/dsa/evaluate-the-value-of-an-arithmetic-expression-in-reverse-polish-notation-in-java/
+
+ex02
+
+https://en.wikipedia.org/wiki/Merge-insertion_sort
+https://en.wikipedia.org/wiki/Binary_search
+https://dev.to/emuminov/human-explanation-and-step-by-step-visualisation-of-the-ford-johnson-algorithm-5g91
+https://www.youtube.com/watch?v=w1QXGe295sI
+
