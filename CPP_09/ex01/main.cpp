@@ -12,6 +12,17 @@
 
 #include "RPN.hpp"
 
+/**
+ * @brief Entry point of the `RPN` program.
+ *
+ * Usage: `./RPN "<expression>"`. Evaluates the Reverse Polish Notation
+ * expression and prints the result on stdout, or `Error` on stderr if the
+ * expression is invalid.
+ *
+ * @param argc Number of arguments (must be 2).
+ * @param argv Arguments; `argv[1]` is the expression.
+ * @return 0 on success, 1 on error.
+ */
 int main (int argc, char **argv)
 {
     if (argc != 2)

@@ -12,6 +12,17 @@
 
 #include "PmergeMe.hpp"
 
+/**
+ * @brief Entry point of the `PmergeMe` program.
+ *
+ * Usage: `./PmergeMe <n1> <n2> ...`. Sorts the sequence of positive integers
+ * with the Ford-Johnson algorithm, in both `std::vector` and `std::deque`, and
+ * prints the time taken by each.
+ *
+ * @param argc Number of arguments (at least 2).
+ * @param argv Arguments; from `argv[1]` on, the numbers to sort.
+ * @return 0 on success, 1 on error.
+ */
 int main(int argc, char** argv)
 {
     if (argc < 2)
@@ -33,47 +44,3 @@ int main(int argc, char** argv)
 
     return 0;
 }
-
-/**
-Pseudo code of the algorithm for vector
-
-função recursiva(containerOriginal)
-    containerOriginal.length == 1
-        return;
-    separar elemento impar se a lista for de tamanho impar
-    colocar a lista em pares
-    verificar qual e o maior de cada par e por numa lista
-    chamar nela propria (recursao) com uma lista so dos maiores
-    criar lista dos menores, na mesma ordem que os pares maiores estao na lista deles
-    inserir menores[0] no maiores[0]
-
-    jcbstl_prev = 1;
-    jcbstl = 3;
-    while (jcbstl_prev < Menores.length)
-        if (jcbstl > Menores.length)
-            jcbstl = Menores.length;
-        for (i = jcbstl; i >= jcbstl_prev + 1; i--)
-            menorElemento = Menores[i - 1];
-            parMenorElemento = findParDoMenor(menorElemento, Maiores);
-            indexMaximo = findIndexParDoMenor(parMenorELemento, Maiores);
-            newPositionMenorElementoNosMaiores = binarySearch(MAiores, begin, indexMaximo, menorELemento);
-            inserirMenorELementonosMAiores(newPositionMenorElementoNosMaiores, Maiores, menorElemento)
-        jcbstl_prev = jcbstl;
-        jcbstl = calculate_jacobsthal();
-    if (elementoImpar)
-        newPositionElementoImpar = binarySearch(Maiores, begin, Maiores.length, elementoImpar);
-        inserirMenorElementonosMaiores(newPositionElementoImpar, Maiores, elementoImpar)
-    containerOriginal = Maiores;
- */
-
- /*
- findParDoMenor(menorElemento, Maiores);
- findIndexParDoMenor(parMenorELemento, Maiores);
- binarySearch(MAiores, begin, indexMaximo, menorELemento);
- newPositionMenorElementoNosMaiores = binarySearch(MAiores, begin, indexMaximo, menorELemento);
- inserirMenorELementonosMAiores(newPositionMenorElementoNosMaiores, Maiores, menorElemento)
- calculate_jacobsthal();
- */
-
- /**
-*/
